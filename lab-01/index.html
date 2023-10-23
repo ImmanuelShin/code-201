@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab-01</title>
+    <style>
+        #h1req {color: darkviolet; background-color: black; padding: 10px;}
+        p {padding: 5px}
+    </style>
+</head>
+<body>
+    <header style="position: fixed; text-align: center; top: 0; left: 0; width: 100%; height: 20px; background-color: coral; padding: 5px;">
+        Cool Header
+    </header>
+    <main>
+        <h1 id="h1req">Class 1 Lab</h1>
+        <h2>Question list</h2>
+        <p id="pColor" style="color:#ff0000; background-color: #150915">Give me a color: </p>
+        <p id="pNumber" style="color:#ffa500; background-color: #121573;">Choose a number: </p>
+        <p id="pAnimal" style="color:#ffff00; background-color: #4F2385;">Pick an animal: </p>
+        <p id="pState" style="color: #90ee90; background-color: #640C32;">Name a place: </p>
+        <p id="pAlert" style="color: whitesmoke; background-color: #407076;">MadLib: </p>
+    </main>
+    <footer style="position: fixed; text-align: center; bottom: 0; left: 0; width: 100%; height: 20px; background-color: #ff7f50; padding: 5px;">
+        Cold Feet
+    </footer>
+    <script>
+        let pColor = prompt("Give me a color");
+        console.log("Color = " + pColor);
+        let pNumber = prompt("Choose a number");
+        console.log("Number = " + pNumber);
+        let pAnimal = prompt("Pick an animal");
+        console.log("Animal = " + pAnimal);
+        let pState = prompt("Name a state");
+        console.log("State = " + pState);
+        let pluralW = ((pNumber == 1) ? "was" : "were");
+        let pluralS = ((pNumber == 1) ? "" : "s");
+        let areThereAnimals = ((pNumber == 0) ? "They were not able to bring laughter and sunshine wherever they went because there weren't any of them in existence. :(" : "They brought laughter and sunshine wherever they went, creating a feathered spectacle that warmed the hearts of all who crossed their path. The end.");
+        let alertSentence = "Once upon a time, in the lovely state of " + pState + ", there " + pluralW + " " + pNumber + " " + pColor + " " + pAnimal + pluralS + " who loved to roam the countryside. " + areThereAnimals;
+        alert(alertSentence);
+        let p1 = document.getElementById("pColor");
+        let p2 = document.getElementById("pNumber");
+        let p3 = document.getElementById("pAnimal");
+        let p4 = document.getElementById("pState");
+        let p5 = document.getElementById("pAlert");
+        let node1 = document.createTextNode(pColor);
+        let node2 = document.createTextNode(pNumber);
+        let node3 = document.createTextNode(pAnimal);
+        let node4 = document.createTextNode(pState);
+        let node5 = document.createTextNode(alertSentence);
+        p1.append(node1);
+        p2.append(node2);
+        p3.append(node3);
+        p4.append(node4);
+        p5.append(node5);
+    </script>
+</body>
+</html>
